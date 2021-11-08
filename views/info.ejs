@@ -1,0 +1,48 @@
+<%- include("./templates/header", {title: "CRUD | info employee"})%>
+<body>
+
+	<%- include("./templates/nav")%>
+
+<!--table's html-->
+	<div class="d-flex flex-column justify-content-center align-items-center">
+		
+		<% if(!data) { %>
+
+			<h1 class="display-2">Sorry!</h1>
+			<hr />
+			<p class="fs-4 text-danger"> The user doesn't exists! D: </p>
+
+		<% } else { %>
+
+			<h1 class="display-5 fw-bold my-4 text-center text-muted">Info of Employee</h1>
+
+			<table class="w-75 table table-hover table-striped text-center">
+			<thead>
+				<th scope="col">Encrypted Id</th>
+				<th scope="col">Name</th>
+				<th scope="col">Position</th>
+				<th scope="col">Hire_date</th>
+				<th scope="col">You want...</th>
+			</thead>
+					<tr>
+						<th scope="row"><%= data.id%></th>
+						<form>
+							<td><input type='text' name="name" value="<%= data.name%>"/></td>
+							<td><input type='text' name="pos" value="<%= data.position%>"/></td>
+							<td><input type='text' name="hd" value="<%= data.hire_date%>"/></td>
+							<td><input type="submit" class="btn btn-warning btn-block" data-ide="<%= data.id%>" id="btnUpdate" /></td>
+						</form>
+					</tr>
+			</table>
+
+			<p class="fs-4 text-danger">Do you want to delete this Employee?</p>
+			<button class="btn btn-danger btn-block" id="de" data-id="<%= data.id%>">Delete This Employee!</button>
+
+		<% } %>
+
+	</div>
+
+<script src="deleteUser.js"></script>
+<script src="updateUser.js"></script>
+</body>
+</html>

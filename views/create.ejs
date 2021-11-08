@@ -1,0 +1,24 @@
+<%- include("./templates/header", {title: "CRUD | Inicio | Crear"})%>
+<body>
+	<%- include("./templates/nav")%>
+	<h1 class="display-5 fw-bold my-4 text-center text-muted">Create New Employee!</h1>
+	
+	<div class="container d-flex flex-column justify-content-center align-items-center text-center">
+		<form action="/" method="POST" id="form" class="w-75">
+			<label class="d-block my-4 fs-4">
+				Name Employee: <input class="form-control" type="text" name="name" />
+			</label>
+			<label class="d-block my-4 fs-4">
+				Position Employee: <input class="form-control" type="text" name="position" />
+			</label>
+			<label class="d-block my-4 fs-4">
+				Hire_date: <input type="date" name="hire_date" class="form-control">
+			</label>	
+			<button class="btn btn-success fw-bold" disabled> Submit! </button>
+		</form>
+
+	</div>
+
+<script src="/validation.js"></script>
+</body>
+</html>

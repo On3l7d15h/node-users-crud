@@ -1,0 +1,41 @@
+<%- include("./templates/header", {title: "CRUD | Inicio"})%>
+<body>
+
+	<div class="bg-dark d-flex flex-row p-2 align-items-center justify-content-between">
+		<a href="/create" class="btn btn-success">Create new employee</a>
+		<button class="btn btn-primary" id="hey">This...</button>
+	</div>
+
+	<h1 class="display-5 fw-bold my-4 text-center text-muted">Crud for Employess</h1>
+
+<!--table's html-->
+	<div class="d-flex flex-row justify-content-center align-items-center">
+		<table class="w-75 table table-hover table-striped text-center">
+			<thead>
+				<th scope="col">Encrypted Id</th>
+				<th scope="col">Name</th>
+				<th scope="col">Position</th>
+				<th scope="col">Hire_date</th>
+				<th scope="col">See Employee</th>
+			</thead>
+				<% data.forEach(({id, name, position, hire_date}) => { %>
+					<tr>
+						<th scope="row"><%= id%></th>
+						<td><%= name%></td>
+						<td><%= position%></td>
+						<td><%= hire_date%></td>
+						<td><a href="/<%= id%>" class="btn btn-warning">See</a></td>
+					</tr>
+				<% }) %>
+
+		</table>
+	</div>
+
+<script type="text/javascript">
+	const btn = document.querySelector("#hey")
+	btn.addEventListener("click", () => {
+		Swal.fire("Info", "This app was created for manage a little company!", "success")
+	});
+</script>
+</body>
+</html>
