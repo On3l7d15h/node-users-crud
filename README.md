@@ -1,0 +1,1 @@
+![preview de la imágen](./public/images/preview.png)
